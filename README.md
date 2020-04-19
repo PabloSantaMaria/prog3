@@ -1,2 +1,5 @@
-# prog3
-Programación 3 -2020 - TUDAI - UNICEN
+# Programación 3
+
+Pablo Santa María
+LU 248940
+TUDAI - UNICEN - 2020

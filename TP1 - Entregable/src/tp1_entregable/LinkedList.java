@@ -9,8 +9,8 @@ public class LinkedList implements Iterable<Integer> {
 		this.size = 0;
 	}
 
-	public Node getFirst() {
-		return this.first;
+	public Integer getFirst() {
+		return this.first.getData();
 	}
 	public int size() {
 		return this.size;

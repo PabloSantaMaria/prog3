@@ -8,52 +8,60 @@ public class Main {
 	public static void main(String[] args) {
 		LinkedList input = new LinkedList();
 		input.insertFront(28);
+		input.insertFront(28);
 		input.insertFront(14);
 		input.insertFront(18);
+		input.insertFront(17);
+		input.insertFront(20);
 		input.insertFront(19);
+		input.insertFront(5);
+		input.insertFront(5);
 		input.insertFront(7);
+		input.insertFront(2);
 		input.insertFront(2);
 		input.insertFront(5);
 		input.insertFront(3);
 
 		System.out.println("Entrada: " + input);
-
+		
+		LinkedListIterator it = input.iterator();
+		
 		int index = 1;
-
-		if (!input.isEmpty()) {
-			while (index < input.size()) {
-				int end = getSequence(input, index);
-				if (index != end) addToOutput(input, index, end);
-				index = end + 1;				
-			}			
+		
+		while (it.hasNext()) {
+			Integer data = it.next();
+			getSequence(data);
+			index++;
+			if (index == input.size() + 1) {
+				getSequence(-1);
+			}
 		}
 
 		System.out.println("Salida: " + output);
 	}
-
+	
+	static LinkedList sequence = new LinkedList();
 	static List<LinkedList> output = new ArrayList<LinkedList>();
 	
-	private static int getSequence(LinkedList input, int start) {
-		int end = start + 1;
-		Integer val1 = input.get(start);
-		Integer val2 = input.get(end);
-
-		while (val1 < val2) {
-			val1 = input.get(end);
-			val2 = input.get(end + 1);
-			end++;
+	private static void getSequence(Integer data) {
+		if (!sequence.isEmpty()) {
+			if (data <= sequence.getFirst() && sequence.size() >= 2) {
+				addToOutput(sequence);
+			}
+			else if (data <= sequence.getFirst() && sequence.size() == 1) {
+				sequence.extractFront();
+			}
 		}
-
-		return end - 1;
+		sequence.insertFront(data);
 	}
 	
-	private static void addToOutput(LinkedList input, int start, int end) {
+	private static void addToOutput(LinkedList sequence) {
 		LinkedList aux = new LinkedList();
-
-		for (int i = start; i <= end; i++) {
-			aux.insertBack(input.get(i));
+		LinkedListIterator it = sequence.iterator();
+		while (it.hasNext()) {
+			aux.insertFront(sequence.extractFront());
+			it.next();
 		}
-
 		output.add(aux);
 	}
 }

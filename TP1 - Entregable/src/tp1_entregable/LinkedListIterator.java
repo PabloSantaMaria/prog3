@@ -15,7 +15,7 @@ public class LinkedListIterator implements Iterator<Integer> {
 
 	@Override
 	public Integer next() {
-		int data = this.current.getData();
+		Integer data = this.current.getData();
 		this.current = this.current.getNext();
 		return data;
 	}
@@ -25,5 +25,4 @@ public class LinkedListIterator implements Iterator<Integer> {
 	public Integer get() {
 		return this.current.getData();
 	}
-
 }

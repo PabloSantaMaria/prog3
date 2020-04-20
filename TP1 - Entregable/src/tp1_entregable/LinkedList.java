@@ -1,8 +1,5 @@
 package tp1_entregable;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class LinkedList implements Iterable<Integer> {
 	protected Node first;
 	protected int size;
@@ -32,7 +29,6 @@ public class LinkedList implements Iterable<Integer> {
 			return tmp.getData();
 		}
 		else return -1;
-//		else return null;
 	}
 
 	public void insertFront(int data) {
@@ -134,6 +130,4 @@ public class LinkedList implements Iterable<Integer> {
 		}
 		return list;
 	}
-
-
 }

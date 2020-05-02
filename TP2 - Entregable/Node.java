@@ -1,4 +1,4 @@
-package ej6;
+package tp2_entregable;
 
 public class Node {
 	private Integer data;

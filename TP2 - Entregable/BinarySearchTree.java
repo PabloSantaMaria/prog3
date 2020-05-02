@@ -1,4 +1,4 @@
-package ej6;
+package tp2_entregable;
 
 import java.util.Collections;
 import java.util.LinkedList;

@@ -1,17 +1,19 @@
-package ej6;
+package tp2_entregable;
 
 public class Main {
 
 	public static void main(String[] args) {
-		
+		//Genera un árbol al azar de 15 nodos con valores no repetidos entre 1 y 40
 		BinarySearchTree randomBST = new BinarySearchTree(15, 1, 40);
+		System.out.println("Arbol aleatorio: ");
+		printTree(randomBST);
 		
 		//Construyo un arbol de ejemplo a partir de un arreglo (inserta de a uno los valores)
 		Integer[] array = {54, 28, 64, 14, 31, 61, 69, 13, 16, 36, 37, 59, 62};
 		BinarySearchTree sampleBST = new BinarySearchTree(array);
 		
-		//Verificacion de funcionamiento de cada metodo
-		System.out.println("Arbol: ");
+		//Verificacion de funcionamiento de cada metodo tomando el arbol de ejemplo
+		System.out.println("Arbol de ejemplo: ");
 		printTree(sampleBST);
 		
 		//Insertar
